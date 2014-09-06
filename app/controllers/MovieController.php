@@ -12,7 +12,7 @@ class MovieController extends \BaseController {
 	{
         $movie = DB::table('movie')
             ->orderBy('added_at')
-            ->take(10)
+            ->take(30)
             ->get();
         return View::make('movie.index')
             ->with('movie', $movie);
@@ -94,7 +94,7 @@ class MovieController extends \BaseController {
 	public function wordAnalysis($id)
 	{
         $movie = DB::table('movie')->where('id', $id)->first();
-        $movie->reviewc = $this->mb_str_word_count($movie->name,2);
+        $movie->reviewc = count($this->mb_str_word_count($movie->name,2));
         print_r($movie->reviewc);
         return View::make('movie.word')->with('movie', $movie);
 	}

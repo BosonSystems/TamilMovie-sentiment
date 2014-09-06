@@ -20,7 +20,7 @@
                     <a href="{{url('/edit/'.$row->id)}}">Edit</a>
                 </div>
             </div>
-            <? } ?>
+            <?php } ?>
             </div>
     </div>
 </div>
