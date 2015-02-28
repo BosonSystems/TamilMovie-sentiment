@@ -11,9 +11,6 @@
             <?php
             foreach($movie as $row) { ?>
             <div class="col-md-6 mB20">
-                <a class="mvImg" href="#">
-                    <img width="150" height="150" alt="event-1" class="attachment-thumbnail wp-post-image" src="{{asset('img/'.$row->img)}}">
-                </a>
                 <div class="mvCont">
                     <h3><a href="{{url('/view/'.$row->id)}}">{{$row->name}}</a></h3>
                     <p>{{Str::words($row->review,10)}}</p>
